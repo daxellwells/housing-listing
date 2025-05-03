@@ -5,11 +5,11 @@ class Database:
         self.db = db
         self._initialize_db()
 
-    #connect to database
+    # connect to database
     def _connect(self):
         return sqlite3.connect(self.db)
     
-    #initialize database
+    # initialize database
     def _initialize_db(self):
         with self._connect() as connection:
             cursor = connection.cursor()
@@ -26,7 +26,7 @@ class Database:
                            ''')
             connection.commit()
     
-    #insert listing into database
+    # insert listing into database
     def insert_listing(self,listing):
         with self._connect() as connection:
             cursor = connection.cursor()
@@ -36,7 +36,7 @@ class Database:
                            ''', (listing["title"], listing["description"], listing["rent"], listing["address"], listing["rooms"], listing["contact_info"])) 
             connection.commit()
 
-    #returns a python dictionary of all listings in the database
+    # returns a python dictionary of all listings in the database
     def get_all_listings(self):
         with self._connect() as connection:
             cursor = connection.cursor()

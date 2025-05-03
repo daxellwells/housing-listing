@@ -16,7 +16,7 @@ def get_page():
 @app.route('/submit', methods=['POST'])
 def submit():
     data = dict(request.form)
-    #v alidates submission: if invalid, returns an error
+    # validates submission: if invalid, returns an error
     validation, message = validate_listing(data)
     if not validation:
         return message, 400

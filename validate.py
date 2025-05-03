@@ -1,5 +1,5 @@
 
-#validates listing submitted to database
+# validates listing submitted to database
 def validate_listing(data):
     try:
         if not(0 < len(data["title"]) < 100):
