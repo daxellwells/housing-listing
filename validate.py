@@ -1,16 +1,18 @@
+
+#validates listing submitted to database
 def validate_listing(data):
     try:
-        if 0 < len(data["title"] <= 100):
+        if not(0 < len(data["title"]) < 100):
             return False, "Invalid title: between 1 and 100 characters"
-        if len(data["description"] > 1000):
+        if len(data["description"]) > 1000:
             return False, "Invalid description length"
-        if data["rent"] < 0:
+        if float(data["rent"]) < 0:
             return False, "Invalid input for Rent"
-        if data["address"] > 200:
+        if len(data["address"]) > 200:
             return False, "Invalid address length"
-        if data["rooms"] < 1:
+        if int(data["rooms"]) < 1:
             return False, "Invalid room amount"
-        if data["contact_info"] > 250:
+        if len(data["contact_info"]) > 250:
             return False, "Invalid contact info length"
         
         return True, ""

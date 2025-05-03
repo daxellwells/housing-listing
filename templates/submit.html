@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listing Submission</title>
+    </head>
+    <body>
+        <h1>Submit a New Listing:</h1>
+        <form action="/submit" method="post">
+            <label>Title:<br><input type="text" name="title" required></label><br><br>
+            <label>Description:<br><textarea name = "description" rows="4" cols="50"></textarea></label><br><br>
+            <label>Rent:<br><input type="number" name="rent" step="0.01" required></label><br><br>
+            <label>Address:<br><input type="text" name="address" required></label><br><br>
+            <label>Number of Rooms:<br><input type="number" name="rooms" required></label><br><br>
+            <label>Contact Info:<br><input type="text" name="contact_info" required></label><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <hr>
+        <br><br>
+        <a href="/listings">Listings</a>
+    </body>
+</html>

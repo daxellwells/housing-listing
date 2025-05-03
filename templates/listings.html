@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listings</title>
+    </head>
+    <body>
+        <h1>Listings:</h1>
+        {% if listings %}
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Rent</th>
+                    <th>Address</th>
+                    <th>Rooms</th>
+                    <th>Contact Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for listing in listings %}
+                <tr>
+                    <td>{{ listing.id }}</td>
+                    <td>{{ listing.title }}</td>
+                    <td>{{ listing.description }}</td>
+                    <td>${{ "%.2f"|format(listing.rent) }}</td>
+                    <td>{{ listing.address }}</td>
+                    <td>{{ listing.rooms }}</td>
+                    <td>{{ listing.contact_info }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        <br>
+        <a href="/submit-form">Submit another listing</a>
+    </body>
+</html>
